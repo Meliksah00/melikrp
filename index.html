@@ -1,65 +1,420 @@
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melik RP</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body{
+
+    *{
       margin:0;
-      background:#0f0f0f;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0b0b0b;
       color:white;
-      font-family:Arial;
-      text-align:center;
+      overflow-x:hidden;
+    }
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter:blur(10px);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#00ffd5;
+      text-shadow:0 0 15px #00ffd5;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav a:hover{
+      color:#00ffd5;
     }
 
     .hero{
       height:100vh;
+      background:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920&auto=format&fit=crop') center/cover;
+      position:relative;
       display:flex;
       justify-content:center;
       align-items:center;
-      flex-direction:column;
+      text-align:center;
+      padding:20px;
     }
 
-    h1{
-      font-size:70px;
-      color:#00ffcc;
-      text-shadow:0 0 20px #00ffcc;
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.75);
     }
 
-    p{
-      font-size:22px;
-      opacity:0.8;
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:80px;
+      margin-bottom:15px;
+      color:#00ffd5;
+      text-shadow:0 0 25px #00ffd5;
+    }
+
+    .hero p{
+      font-size:20px;
+      opacity:0.9;
+      margin-bottom:35px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
     .btn{
-      margin-top:20px;
       padding:15px 35px;
-      background:#00ffcc;
-      color:black;
+      border-radius:12px;
       text-decoration:none;
-      border-radius:10px;
-      font-weight:bold;
+      font-weight:600;
       transition:0.3s;
     }
 
-    .btn:hover{
-      transform:scale(1.1);
+    .primary{
+      background:#00ffd5;
+      color:black;
     }
+
+    .secondary{
+      border:2px solid #00ffd5;
+      color:#00ffd5;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 20px rgba(0,255,213,0.5);
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:60px;
+      color:#00ffd5;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#121212;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:35px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#00ffd5;
+      box-shadow:0 0 25px rgba(0,255,213,0.15);
+    }
+
+    .card h2{
+      color:#00ffd5;
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .rules{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .rule-box{
+      background:#121212;
+      padding:30px;
+      border-radius:18px;
+      border-left:5px solid #00ffd5;
+    }
+
+    .rule-box h3{
+      margin-bottom:15px;
+      color:#00ffd5;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      height:230px;
+      object-fit:cover;
+      transition:0.3s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    .discord{
+      text-align:center;
+      background:#121212;
+      border-radius:20px;
+      padding:60px 20px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .discord h2{
+      color:#00ffd5;
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .discord p{
+      margin-bottom:30px;
+      opacity:0.85;
+    }
+
+    footer{
+      text-align:center;
+      padding:35px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      background:#090909;
+      color:#888;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      nav a{
+        margin:0 10px;
+      }
+
+    }
+
   </style>
 </head>
-
 <body>
 
-  <div class="hero">
-    <h1>MELIK RP</h1>
-    <p>Yeni Nesil FiveM Roleplay Deneyimi</p>
+<header>
+  <div class="logo">MELIK RP</div>
 
-    <a class="btn" href="#">
-      DISCORD KATIL
-    </a>
+  <nav>
+    <a href="#anasayfa">Ana Sayfa</a>
+    <a href="#istatistik">İstatistik</a>
+    <a href="#kurallar">Kurallar</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#discord">Discord</a>
+  </nav>
+</header>
+
+<section class="hero" id="anasayfa">
+
+  <div class="hero-content">
+    <h1>MELIK RP</h1>
+
+    <p>
+      Yeni nesil FiveM Roleplay deneyimi. Kaliteli rol, aktif ekip,
+      gerçek ekonomi ve eğlenceli sistemler seni bekliyor.
+    </p>
+
+    <div class="buttons">
+      <a href="https://discord.gg/discordlink" class="btn primary">Discord Katıl</a>
+
+      <a href="fivem://connect/127.0.0.1" class="btn secondary">Sunucuya Bağlan</a>
+    </div>
+
   </div>
+
+</section>
+
+<section id="istatistik">
+
+  <h1 class="section-title">Sunucu İstatistikleri</h1>
+
+  <div class="stats">
+
+    <div class="card">
+      <h2>128+</h2>
+      <p>Aktif Oyuncu</p>
+    </div>
+
+    <div class="card">
+      <h2>24/7</h2>
+      <p>Aktif Sunucu</p>
+    </div>
+
+    <div class="card">
+      <h2>15+</h2>
+      <p>Aktif Yetkili</p>
+    </div>
+
+    <div class="card">
+      <h2>50+</h2>
+      <p>Özel Script</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="kurallar">
+
+  <h1 class="section-title">Sunucu Kuralları</h1>
+
+  <div class="rules">
+
+    <div class="rule-box">
+      <h3>VDM / RDM Yasak</h3>
+      <p>
+        Sebepsiz oyuncu öldürmek veya araçla ezmek yasaktır.
+      </p>
+    </div>
+
+    <div class="rule-box">
+      <h3>Fail RP Yasak</h3>
+      <p>
+        Gerçekçilik dışı rol yapmak sunucuda yasaktır.
+      </p>
+    </div>
+
+    <div class="rule-box">
+      <h3>Saygılı Davranış</h3>
+      <p>
+        Oyunculara karşı küfür, toxic davranış ve hakaret yasaktır.
+      </p>
+    </div>
+
+    <div class="rule-box">
+      <h3>Hile Yasak</h3>
+      <p>
+        Her türlü yazılım ve exploit kalıcı ban sebebidir.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="galeri">
+
+  <h1 class="section-title">Sunucudan Kareler</h1>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
+
+    <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1200&auto=format&fit=crop">
+
+    <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
+
+    <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?q=80&w=1200&auto=format&fit=crop">
+
+  </div>
+
+</section>
+
+<section id="discord">
+
+  <div class="discord">
+
+    <h2>Discord Sunucumuza Katıl</h2>
+
+    <p>
+      Etkinliklerden haberdar ol, ticket oluştur,
+      ekiple iletişime geç ve topluluğa katıl.
+    </p>
+
+    <a href="https://discord.gg/discordlink" class="btn primary">
+      Discord'a Katıl
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Melik RP - Tüm Hakları Saklıdır.
+</footer>
 
 </body>
 </html>
+```
+
+# Yapılacaklar
+
+1. GitHub'da index.html dosyasını aç.
+2. İçindeki eski kodların hepsini sil.
+3. Bu kodun tamamını yapıştır.
+4. Commit Changes bas.
+5. Vercel otomatik güncelleyecek.
+6. Siteye girince profesyonel FiveM sitesi açılacak.
+
+# Sonra Ekleyebileceklerimiz
+
+* Gerçek online oyuncu sayısı
+* Discord widget
+* Admin ekibi paneli
+* Ticket sistemi
+* Market/VIP sistemi
+* Müzikli giriş ekranı
+* Hareketli video arkaplan
+* Animasyonlu loader
+* Kayıt sistemi
+* Ban sorgu paneli
+* Sunucu durum sistemi
+* TikTok/Instagram bağlantıları
