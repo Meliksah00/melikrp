@@ -1,3 +1,4 @@
+# Güncellenmiş Premium FiveM Site Kodu
 
 ```html
 <!DOCTYPE html>
@@ -12,6 +13,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:18px;
+      height:18px;
+      background:#00ffd5;
+      border-radius:50%;
+      pointer-events:none;
+      box-shadow:0 0 25px #00ffd5;
+      transform:translate(-50%,-50%);
+      z-index:999999;
+      animation:cursorAnim 1s infinite alternate;
+    }
+
+    @keyframes cursorAnim{
+      from{
+        transform:translate(-50%,-50%) scale(1);
+      }
+      to{
+        transform:translate(-50%,-50%) scale(1.4);
+      }
+    }
 
     *{
       margin:0;
@@ -340,6 +364,27 @@
     </div>
 
     <div class="rule-box">
+      <h3>Troll Yasaktır</h3>
+      <p>
+        Oyuncuların rolünü bozacak troll davranışlar yasaktır.
+      </p>
+    </div>
+
+    <div class="rule-box">
+      <h3>Combat Log Yasaktır</h3>
+      <p>
+        Rol sırasında oyundan çıkmak ceza sebebidir.
+      </p>
+    </div>
+
+    <div class="rule-box">
+      <h3>ADK / DDK / MDK Yasaktır</h3>
+      <p>
+        Kural ihlali içeren tüm kötü kullanım türleri yasaktır.
+      </p>
+    </div>
+
+    <div class="rule-box">
       <h3>Hile Yasak</h3>
       <p>
         Her türlü yazılım ve exploit kalıcı ban sebebidir.
@@ -356,13 +401,13 @@
 
   <div class="gallery">
 
-    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=1200&auto=format&fit=crop">
 
-    <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
 
-    <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
 
-    <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
 
   </div>
 
@@ -379,9 +424,40 @@
       ekiple iletişime geç ve topluluğa katıl.
     </p>
 
-    <a href="https://discord.gg/q59Z3VZj" class="btn primary">
+    <a href="https://discord.gg/discordlink" class="btn primary">
       Discord'a Katıl
     </a>
+
+  </div>
+
+</section>
+
+<section id="donate">
+
+  <h1 class="section-title">Donate & VIP</h1>
+
+  <div class="stats">
+
+    <div class="card">
+      <h2>VIP Bronze</h2>
+      <p>
+        Özel araçlar, özel rol paketleri ve ekstra avantajlar.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>VIP Silver</h2>
+      <p>
+        Günlük ödüller, premium özellikler ve özel destek.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>VIP Gold</h2>
+      <p>
+        Tüm premium sistemlere erişim ve özel içerikler.
+      </p>
+    </div>
 
   </div>
 
@@ -394,15 +470,6 @@
 </body>
 </html>
 ```
-
-# Yapılacaklar
-
-1. GitHub'da index.html dosyasını aç.
-2. İçindeki eski kodların hepsini sil.
-3. Bu kodun tamamını yapıştır.
-4. Commit Changes bas.
-5. Vercel otomatik güncelleyecek.
-6. Siteye girince profesyonel FiveM sitesi açılacak.
 
 # Sonra Ekleyebileceklerimiz
 
